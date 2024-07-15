@@ -46,9 +46,7 @@ const contentDiv = document.getElementById('content');
 // Check if the content div exists
 if (contentDiv) {
     // Print the initial string
-    const initialParagraph = document.createElement('p');
-    initialParagraph.textContent = initialString;
-    contentDiv.appendChild(initialParagraph);
+    let combinedString = initialString + " ";
 
     // Shuffle the lines array
     const shuffledLines = shuffleArray(lines);
@@ -56,12 +54,15 @@ if (contentDiv) {
     // Get a random number between 13 and 22
     const randomLineCount = getRandomInt(13, 22);
 
-    // Print the first N lines from the shuffled array
+    // Concatenate the first N lines from the shuffled array
     for (let i = 0; i < randomLineCount; i++) {
-        const lineParagraph = document.createElement('p');
-        lineParagraph.textContent = shuffledLines[i];
-        contentDiv.appendChild(lineParagraph);
+        combinedString += shuffledLines[i] + " ";
     }
+
+    // Create a single paragraph with the combined string
+    const combinedParagraph = document.createElement('p');
+    combinedParagraph.textContent = combinedString.trim(); // Trim to remove any trailing space
+    contentDiv.appendChild(combinedParagraph);
 } else {
     console.error("Element with ID 'content' not found.");
 }
