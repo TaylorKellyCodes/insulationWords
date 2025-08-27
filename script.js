@@ -89,7 +89,9 @@ function shuffleArray(array) {
 function generateAdDescription(introLine) {
   const shuffled = shuffleArray(phrases);
   const count = Math.floor(Math.random() * 12) + 5; // 5-16 phrases
-  let adText = introLine + "\n";
+
+  // Start with intro and fixed second line
+  let adText = introLine + "\n2 in x 4ft x 8ft\n";
   let added = 0;
 
   for (let phrase of shuffled) {
@@ -120,7 +122,7 @@ function generateTitle() {
   for (let phrase of shuffled) {
     if (title.length === 0) {
       title = phrase;
-    } else if (title.length + 2 + phrase.length <= 115) {
+    } else if (title.length + 2 + phrase.length <= 99) {
       title += ", " + phrase;
     } else {
       break;
