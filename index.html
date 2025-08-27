@@ -1,92 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insulation Information</title>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insulation Information</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        display: flex;
+        min-height: 100vh;
+        color: #333;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        background-color: #fff;
+        border-right: 1px solid #ddd;
+        min-width: 220px;
+        box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+    }
+
+    .sidebar button {
+        padding: 12px 16px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .sidebar button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Main content */
+    .content {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    #output {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        min-height: 150px;
+        white-space: pre-wrap;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    @media(max-width: 768px) {
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-            display: flex;
-        }
-
-        /* Sidebar for buttons */
-        .sidebar {
-            display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-right: 20px;
-            min-width: 200px;
         }
-
-        button {
-            padding: 10px;
-            font-size: 16px;
-            width: 180px;
-            cursor: pointer;
+        .sidebar {
+            flex-direction: row;
+            justify-content: space-around;
+            border-right: none;
+            border-bottom: 1px solid #ddd;
+            min-width: 100%;
         }
-
-        /* Main content area */
-        .content {
+        .sidebar button {
+            width: auto;
             flex: 1;
         }
-
-        #output {
-            background: #fff;
-            padding: 10px;
-            border: 1px solid #ddd;
-            min-height: 100px;
-            white-space: pre-wrap; /* preserve line breaks */
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <!-- Sidebar with buttons -->
-    <div class="sidebar">
-        <button id="concordTitleBtn">Concord Title</button>
-        <button id="concordDescBtn">Concord Description</button>
-        <button id="durhamTitleBtn">Durham Title</button>
-        <button id="durhamDescBtn">Durham Description</button>
-    </div>
 
-    <!-- Main content area -->
-    <div class="content">
-        <h1>Insulation Information</h1>
-        <div id="output"></div>
-    </div>
+<div class="sidebar">
+    <button id="concordTitleBtn">Concord Title</button>
+    <button id="concordDescBtn">Concord Description</button>
+    <button id="durhamTitleBtn">Durham Title</button>
+    <button id="durhamDescBtn">Durham Description</button>
+</div>
 
-    <script src="script.js"></script>
-    <script>
-        function displayAndCopy(text) {
-            const output = document.getElementById("output");
-            output.innerText = text;
-            navigator.clipboard.writeText(text)
-                .then(() => console.log("Copied to clipboard!"))
-                .catch(err => console.error("Clipboard error:", err));
-        }
+<div class="content">
+    <h1>Insulation Information</h1>
+    <div id="output"></div>
+</div>
 
-        document.getElementById("concordTitleBtn").addEventListener("click", () => {
-            displayAndCopy(generateTitle());
-        });
+<script src="script.js"></script>
+<script>
+function displayAndCopy(text) {
+    const output = document.getElementById("output");
+    output.innerText = text;
+    navigator.clipboard.writeText(text)
+        .then(() => console.log("Copied to clipboard!"))
+        .catch(err => console.error("Clipboard error:", err));
+}
 
-        document.getElementById("concordDescBtn").addEventListener("click", () => {
-            displayAndCopy(generateAdDescription("Located in Concord."));
-        });
+document.getElementById("concordTitleBtn").addEventListener("click", () => {
+    displayAndCopy(generateTitle());
+});
 
-        document.getElementById("durhamTitleBtn").addEventListener("click", () => {
-            displayAndCopy(generateTitle());
-        });
+document.getElementById("concordDescBtn").addEventListener("click", () => {
+    displayAndCopy(generateAdDescription("Located in Concord."));
+});
 
-        document.getElementById("durhamDescBtn").addEventListener("click", () => {
-            displayAndCopy(generateAdDescription("Located in Durham, but I can provide delivery for a fee."));
-        });
-    </script>
+document.getElementById("durhamTitleBtn").addEventListener("click", () => {
+    displayAndCopy(generateTitle());
+});
+
+document.getElementById("durhamDescBtn").addEventListener("click", () => {
+    displayAndCopy(generateAdDescription("Located in Durham, but I can provide delivery for a fee."));
+});
+</script>
+
 </body>
 </html>
