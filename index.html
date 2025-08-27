@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insulation Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            display: flex;
+        }
+
+        /* Sidebar for buttons */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-right: 20px;
+            min-width: 200px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            width: 180px;
+            cursor: pointer;
+        }
+
+        /* Main content area */
+        .content {
+            flex: 1;
+        }
+
+        #output {
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            min-height: 100px;
+            white-space: pre-wrap; /* preserve line breaks */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar with buttons -->
+    <div class="sidebar">
+        <button id="concordTitleBtn">Concord Title</button>
+        <button id="concordDescBtn">Concord Description</button>
+        <button id="durhamTitleBtn">Durham Title</button>
+        <button id="durhamDescBtn">Durham Description</button>
+    </div>
+
+    <!-- Main content area -->
+    <div class="content">
+        <h1>Insulation Information</h1>
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function displayAndCopy(text) {
+            const output = document.getElementById("output");
+            output.innerText = text;
+            navigator.clipboard.writeText(text)
+                .then(() => console.log("Copied to clipboard!"))
+                .catch(err => console.error("Clipboard error:", err));
+        }
+
+        document.getElementById("concordTitleBtn").addEventListener("click", () => {
+            displayAndCopy(generateTitle());
+        });
+
+        document.getElementById("concordDescBtn").addEventListener("click", () => {
+            displayAndCopy(generateAdDescription("Located in Concord."));
+        });
+
+        document.getElementById("durhamTitleBtn").addEventListener("click", () => {
+            displayAndCopy(generateTitle());
+        });
+
+        document.getElementById("durhamDescBtn").addEventListener("click", () => {
+            displayAndCopy(generateAdDescription("Located in Durham, but I can provide delivery for a fee."));
+        });
+    </script>
+</body>
+</html>
