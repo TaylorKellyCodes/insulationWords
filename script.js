@@ -72,7 +72,7 @@ const optionalPhrases4x8 = [
   "Rigid Foam", "Double Foil", "Long-lasting", "fire-resistant", "easy to cut and install", 
   "perfect for DIY projects", "lightweight and durable", "excellent soundproofing", "moisture-resistant",
   "provides year-round comfort", "high R-value insulation", "reduces energy consumption", 
-  "for metal buildings", "for garages", "for grow houses", "for crawl spaces", "for workshops", 
+  "for metal buildings", "for garages", "for grow houses", "for workshops", 
   "for pole barns", "for barndominiums", "for trailer skirts", "thermal barrier", "vapor barrier",
   "weather protection", "industrial-grade", "high-strength", "impact-resistant", "multi-purpose", 
   "budget-friendly", "quick and easy install", "architectural grade", "DIY-friendly", "great for all seasons",
@@ -87,12 +87,18 @@ const optionalPhrases4x5 = [
   "Rigid Foam", "Double Foil", "Long-lasting", "fire-resistant", "easy to cut and install", 
   "perfect for DIY projects", "lightweight and durable", "excellent soundproofing", "moisture-resistant",
   "provides year-round comfort", "high R-value insulation", "reduces energy consumption", 
-  "for metal buildings", "for garages", "for grow houses", "for crawl spaces", "for workshops", 
+  "for metal buildings", "for garages", "for grow houses", "for workshops", 
   "for pole barns", "for barndominiums", "for trailer skirts", "thermal barrier", "vapor barrier",
   "weather protection", "industrial-grade", "high-strength", "impact-resistant", "multi-purpose", 
   "budget-friendly", "quick and easy install", "architectural grade", "DIY-friendly", "great for all seasons",
   "renovation-ready", "excellent thermal insulation", "ideal for home improvement", "commercial-grade quality",
   "indoor/outdoor use", "versatile insulation solution"
+];
+
+//Optional phrases for the metal building part of title 4x5
+const metalBuildingPhrases = [
+  "metal structures", "metal sheds", "prefab metal buildings", "metal workshops", "metal garages", "metal storage units", "industrial metal buildings", "agricultural metal buildings", "commercial metal buildings", "metal warehouses", "metal-framed buildings", "metal construction", "steel frame buildings", "pre-engineered steel buildings", "structural steel buildings", "steel workshops", "steel garages", "steel storage sheds", "heavy-duty steel structures", "steel-framed warehouses", "steel construction projects", "steel fabrication buildings", "steel barns", "post-frame buildings", "post-frame barns", "pole-frame shops", "pole building garages", "barn-style workshops", "farm buildings", "agricultural barns", "storage barns", "pole sheds", "metal pole barns", "post-frame storage units", "pole barn homes", "pole barn workshops",
+
 ];
 
 // Shuffle helper
@@ -183,7 +189,7 @@ function generateTitle4x5() {
   // Generate random number between 320 and 850
   const randomNum = Math.floor(Math.random() * (850 - 320 + 1)) + 320;
 
-  let title = `${randomNum} remaining, 2 in x 4ft x 5ft`;
+  let title = `${randomNum} remaining, 2 in x 4ft x 5ft, great for ${shuffleArray(metalBuildingPhrases)[0]}`;
   
   for (let phrase of shuffled) {
     if (title.length + 2 + phrase.length <= 99) {
