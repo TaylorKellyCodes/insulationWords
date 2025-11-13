@@ -1,5 +1,5 @@
 // Base part of the footer
-const baseFooter = "Loktite Fast Grab or Loktite Quik Grab both work well to glue these to walls and ceilings.";
+const baseFooter = "I have 2 inch by 4 ft by 5 ft for $15 a sheet and 2 inch by 4 ft by 8 ft for $25 a sheet.";
 
 // List of 15 phone number variants (mixed digits + words)
 const phoneVariants = [
@@ -82,7 +82,7 @@ const optionalPhrases4x8 = [
 
 // Optional phrases for title 4x5
 const optionalPhrases4x5 = [
-  "2 in x 4ft x 5ft", "foil on both sides", "new", "heavily discounted", 
+  "foil on both sides", "new", "heavily discounted", 
   "foam board", "EPS", "Expanded Polystyrene", "closed cell", "foam", "high density radiant barrier",
   "Rigid Foam", "Double Foil", "Long-lasting", "fire-resistant", "easy to cut and install", 
   "perfect for DIY projects", "lightweight and durable", "excellent soundproofing", "moisture-resistant",
@@ -179,7 +179,11 @@ function generateTitle4x8() {
 // Generate 4x5 title with max 115 characters
 function generateTitle4x5() {
   const shuffled = shuffleArray(optionalPhrases4x5);
-  let title = "";
+
+  // Generate random number between 320 and 850
+  const randomNum = Math.floor(Math.random() * (850 - 320 + 1)) + 320;
+
+  let title = `${randomNum} remaining, 2 in x 4ft x 5ft`;
   
   for (let phrase of shuffled) {
     if (title.length === 0) {
