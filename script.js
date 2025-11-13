@@ -186,9 +186,7 @@ function generateTitle4x5() {
   let title = `${randomNum} remaining, 2 in x 4ft x 5ft`;
   
   for (let phrase of shuffled) {
-    if (title.length === 0) {
-      title = phrase;
-    } else if (title.length + 2 + phrase.length <= 99) {
+    if (title.length + 2 + phrase.length <= 99) {
       title += ", " + phrase;
     } else {
       break;
