@@ -228,7 +228,7 @@ document.getElementById("durhamTitle4x8Btn").addEventListener("click", () => {
 });
 
 document.getElementById("durhamDesc4x8Btn").addEventListener("click", () => {
-    displayAndCopy(generateAdDescription4x8("Located in Durham, delivery available for a fee."));
+    displayAndCopy(generateAdDescription4x8("Located in Durham."));
 });
 
 document.getElementById("durhamTitle4x5Btn").addEventListener("click", () => {
@@ -236,5 +236,5 @@ document.getElementById("durhamTitle4x5Btn").addEventListener("click", () => {
 });
 
 document.getElementById("durhamDesc4x5Btn").addEventListener("click", () => {
-    displayAndCopy(generateAdDescription4x5("Located in Durham, delivery available for a fee."));
+    displayAndCopy(generateAdDescription4x5("Located in Durham."));
 });
