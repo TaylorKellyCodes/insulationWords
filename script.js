@@ -140,8 +140,8 @@ function generateAdDescription4x5 (introLine) {
   const shuffled = shuffleArray(phrases);
   const count = Math.floor(Math.random() * 12) + 5; // 5-16 phrases
 
-  // Start with intro and fixed second line and third line
-  let adText = introLine + "\n2 in x 4ft x 5ft\n" + "\n$15 a sheet, R9\n";
+  // Start with intro and fixed second line and fixed third line
+  let adText = introLine + " 2 in x 4ft x 5ft, $15 a sheet, R9\n" + "Same week delivery available for a fee. " + "Message on Messenger to book - appointment required. Limited slots." + "\nHigh-quality installed photos included (real customers in metal buildings).";
   let added = 0;
 
   for (let phrase of shuffled) {
