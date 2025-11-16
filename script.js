@@ -99,7 +99,7 @@ function generateAdDescription4x8(introLine) {
   const maxLength = 500 - footer.length - 1;    // reserve space for footer
 
   // Start with intro and fixed second line
-  let adText = introLine + "2\" x 4' x 8'." + " $25 a sheet\n";
+  let adText = introLine + " 2\" x 4' x 8'." + " $25 a sheet\n";
   let added = 0;
 
   for (let phrase of shuffled) {
