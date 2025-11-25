@@ -54,7 +54,7 @@ const phrases = [
   "Closed-cell foam so water won’t soak in.",
   "Great for damp areas, mold-free.",
   "Helps lower energy bills by keeping heat in.",
-  "Saves energy and keeps your space comfy.",
+  "Saves energy and keeps your space usable.",
   "Keeps indoor temperature steady and saves on utilities.",
   "Saves on heating and cooling all year.",
   "Cuts energy costs and keeps you comfy.",
@@ -125,7 +125,7 @@ function generateAdDescription4x5 (introLine) {
   const footer = getFooter();              // reserve one footer per ad
   const maxLength = 500 - footer.length - 1; // reserve space for footer
   // Start with intro and fixed second line and fixed third line
-  let adText = introLine + " 2\" x 4' x 5', $15 a sheet, R9. " + "Same-week pickup/delivery. Message on Messenger to book. Limited slots.";
+  let adText = introLine + " 2\" x 4' x 5', $15 a sheet, R9. " + "Same-week pickup/delivery. Message on Messenger to book. Limited slots. The 4x5s reduce waste.";
   let added = 0;
 
   for (let phrase of shuffled) {
