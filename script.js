@@ -141,7 +141,7 @@ function generateAdDescription4x5 (introLine) {
   return adText;
 }
 
-// Generate 4x8 title with max 115 characters
+// Generate 4x8 title with max 99 characters
 function generateTitle4x8() {
   const shuffled = shuffleArray(optionalPhrases4x8);
   let title = "";
@@ -149,7 +149,7 @@ function generateTitle4x8() {
   for (let phrase of shuffled) {
     if (title.length === 0) {
       title = phrase;
-    } else if (title.length + 2 + phrase.length <= 115) {
+    } else if (title.length + 2 + phrase.length <= 99) {
       title += ", " + phrase;
     } else {
       break;
@@ -159,7 +159,7 @@ function generateTitle4x8() {
   return title;
 }
 
-// Generate 4x5 title with max 115 characters
+// Generate 4x5 title with max 99 characters
 function generateTitle4x5() {
   const shuffled = shuffleArray(optionalPhrases4x5);
 
@@ -169,7 +169,7 @@ function generateTitle4x5() {
   let title = `${randomNum} remaining, 2" x 4' x 5', great for ${shuffleArray(metalBuildingPhrases)[0]}`;
   
   for (let phrase of shuffled) {
-    if (title.length + 2 + phrase.length <= 115) {
+    if (title.length + 2 + phrase.length <= 99) {
       title += ", " + phrase;
     } else {
       break;
