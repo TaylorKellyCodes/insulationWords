@@ -144,12 +144,14 @@ function generateAdDescription4x5 (introLine) {
 // Generate 4x8 title with max 99 characters
 function generateTitle4x8() {
   const shuffled = shuffleArray(optionalPhrases4x8);
-  let title = "";
+
+  // Generate random number between 320 and 850
+  const randomNum = Math.floor(Math.random() * (850 - 320 + 1)) + 320;
+
+  let title = `${randomNum} remaining, 2" x 4' x 8', great for ${shuffleArray(metalBuildingPhrases)[0]}`;
   
   for (let phrase of shuffled) {
-    if (title.length === 0) {
-      title = phrase;
-    } else if (title.length + 2 + phrase.length <= 99) {
+    if (title.length + 2 + phrase.length <= 99) {
       title += ", " + phrase;
     } else {
       break;
